@@ -1,0 +1,406 @@
+/* Main Responsive Adjustments */
+
+/* Hamburger menu - hidden by default on large screens */
+.hamburger-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 30px;
+    color: #333;
+}
+
+.mobile-br {
+    display: none;
+}
+
+/* Sidebar Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -75%;
+    /* Hidden by default */
+    width: 75%;
+    height: 100vh;
+    background-color: #fff8f0;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    /* Fix width calculation */
+}
+
+
+.side-menu.active {
+    left: 0;
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+    /* Hidden by default */
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 15px;
+}
+
+.close-menu {
+    font-size: 28px;
+    cursor: pointer;
+    color: #f15a29;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.mobile-nav-links li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    display: block;
+}
+
+/* Cart Badge */
+/* Cart Badge Removed */
+.cart-container {
+    display: inline-block;
+}
+
+/* Specific Media Query for Laptop and smaller screens */
+@media screen and (max-width: 1024px) {
+    .mobile-br {
+        display: block;
+    }
+
+    /* Announcement Section */
+    .annc p {
+        font-size: 14px;
+        /* Smaller font */
+        white-space: nowrap;
+        /* Single line */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 5px 10px;
+    }
+
+    /* Navbar Top Section */
+    .nav-top {
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        justify-content: center;
+        padding-bottom: 10px;
+    }
+
+    .nav-top .flex {
+        width: 50%;
+        /* 2 divs in one line */
+        justify-content: center;
+        padding: 0 !important;
+        /* Remove specific padding-left */
+    }
+
+    .nav-top .flex div {
+        font-size: 11px;
+        /* Slightly smaller text */
+    }
+
+    .nav-top>div:last-child {
+        width: 100%;
+        /* Delivering Sweetness on new line */
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .nav-top>div:last-child p {
+        margin: 0;
+        /* Remove left margin */
+        font-size: 14px;
+    }
+
+    /* Navbar Middle Section */
+    .nav-middle {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        /* Grid layout: Ham | Logo | Icons */
+        align-items: center;
+        padding: 10px 0;
+    }
+
+    /* Hide the text "The baking artists..." */
+    .nav-text {
+        display: none;
+    }
+
+    /* Show Hamburger */
+    .hamburger-icon {
+        display: block;
+        justify-self: start;
+    }
+
+    /* Resize Logo */
+    .nav-middle .logo {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-middle .logo img {
+        width: 120px;
+        /* Smaller logo */
+        margin: 0;
+    }
+
+    .nav-middle :nth-child(1) {
+        padding-left: 0;
+        /* Reset padding */
+    }
+
+    /* Nav Icons */
+    .nav-middle .nav-icon {
+        margin-right: 0;
+        display: flex;
+        gap: 15px;
+        justify-self: end;
+        padding-right: 20px;
+    }
+
+    .nav-icon ion-icon {
+        padding-right: 0;
+        font-size: 24px;
+    }
+
+    /* Hide specific icons */
+    .hide-mobile {
+        display: none;
+    }
+
+    /* Nav Bottom */
+    .nav-bottom {
+        display: none;
+    }
+}
+
+/* Mobile Cards Adjustment (768px and down) */
+@media screen and (max-width: 768px) {
+    .cards-section {
+        padding: 0 10px;
+    }
+
+    .product-slider-container {
+        overflow-x: auto;
+        /* Enable native scrolling */
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 20px;
+        /* Scrollbar hiding */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .product-slider-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .product-slider-track {
+        transform: none !important;
+        /* Disable JS slider movement */
+        width: max-content;
+        gap: 15px;
+        /* Smaller gap for mobile */
+    }
+
+    .cards {
+        width: 45vw;
+        /* Approx 2 cards per screen */
+        min-width: 45vw;
+        margin: 0;
+        flex: 0 0 auto;
+    }
+
+    .card-image-content {
+        width: 100%;
+        /* Fill container */
+    }
+
+    /* Adjust decorative heading lines on mobile */
+    .heading-line {
+        display: block;
+        /* Show them again */
+        flex: 0 0 30px;
+        /* Smaller width */
+        width: 30px;
+    }
+
+    /* Fix paragraph spacing */
+    .banner-description {
+        padding: 0 20px;
+    }
+
+    /* Increase Hero Slider Height on Mobile */
+    .slide-img {
+        height: 50vh;
+        /* Increase height */
+        object-fit: contain;
+        /* Show full image */
+        background-color: #fff8f0;
+        /* Optional bg */
+    }
+}
+
+
+/* Footer Tablet */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+}
+
+/* Footer Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px 20px;
+    }
+
+    .footer-brand {
+        text-align: left;
+        align-items: flex-start;
+        grid-column: auto;
+    }
+
+    .footer-social {
+        justify-content: flex-start;
+    }
+
+    .footer-newsletter {
+        grid-column: 1 / -1;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .footer-column {
+        overflow: hidden;
+    }
+
+    .footer-column h3 {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+        word-break: break-all;
+        font-size: 12px;
+    }
+
+    .footer-logo {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Corporate Section Desktop Clone Hide */
+@media screen and (min-width: 769px) {
+    .corporate-customers-section .logos .clone {
+        display: none;
+    }
+}
+
+/* Corporate Section Mobile */
+@media screen and (max-width: 768px) {
+    .corporate-customers-section h2 {
+        font-size: 22px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+    }
+
+    .corporate-customers-section .logos {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 10px;
+        padding-bottom: 20px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .corporate-customers-section .logos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .corporate-customers-section .logos img {
+        flex: 0 0 calc(50% - 10px);
+        width: calc(50% - 10px);
+        scroll-snap-align: start;
+        object-fit: contain;
+    }
+}
+
+/* Secure Checkout Mobile */
+@media screen and (max-width: 768px) {
+    .secure-checkout .payment-logos {
+        display: flex;
+        flex-wrap: nowrap !important;
+        justify-content: flex-start;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .secure-checkout .payment-logos::-webkit-scrollbar {
+        display: none;
+    }
+
+    .payment-logos .payment-card {
+        flex: 0 0 calc((100% - 30px) / 4);
+        width: calc((100% - 30px) / 4);
+        scroll-snap-align: start;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .payment-logos .payment-card img {
+        width: 100%;
+        max-width: 60px;
+        height: auto;
+    }
+}
